@@ -22,10 +22,31 @@ echo "<br>";
 $resultado = mysqli_query($mysqli, "SELECT id, nombre_estado FROM estados");
 
 // 4. Imprimir Filas o Tuplas
-while ($fila = mysqli_fetch_assoc($resultado)) {
+// Opcion A
+/*while ($fila = mysqli_fetch_assoc($resultado)) {
 	echo $fila['id'].' '.$fila['nombre_estado'];
 	print "</br>";
+}*/
+
+// Opcion B
+/*echo "<SELECT>";
+while ($fila = mysqli_fetch_assoc($resultado)) {
+	//echo $fila['id'].' '.$fila['nombre_estado'];
+	//print "</br>";
+	echo "<option value = '".$fila['id']."'>".$fila['nombre_estado']."</option>";
 }
+echo "</SELECT>";
+*/
+// Opcion C
+echo "<table>";
+while ($fila = mysqli_fetch_assoc($resultado)) {
+	echo "<tr>";
+		echo "<td>".$fila['id']."</td>";
+		echo "<td>".$fila['nombre_estado']."</td>";
+	echo "</tr>";
+}
+echo "</table>";
+
 // 5. Liberar Memoria de Resultados
 //mysqli_free_result($resultado);
 $resultado->free();
@@ -33,6 +54,7 @@ $resultado->free();
 // 6. Cerrar la Conexion
 mysqli_close($mysqli);
 
-echo "Termino";
+echo "</br>Termino";
+
 
  ?>
