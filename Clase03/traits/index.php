@@ -7,6 +7,8 @@
 	echo $gato->tocar();
 	echo "<br>";
 	echo $gato->tocar_doble();
+	echo "<br>";
+	echo $gato->tocar_triple();
 
 
  ?>

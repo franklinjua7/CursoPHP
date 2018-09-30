@@ -5,5 +5,6 @@
 
 	class Gatooo extends Animal {
 		use TocableTrait;
+		use tocable2Trait;
 	}
  ?>
