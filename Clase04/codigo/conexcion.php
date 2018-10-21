@@ -29,14 +29,14 @@ $resultado = mysqli_query($mysqli, "SELECT id, nombre_estado FROM estados");
 }*/
 
 // Opcion B
-/*echo "<SELECT>";
+echo "<SELECT>";
 while ($fila = mysqli_fetch_assoc($resultado)) {
 	//echo $fila['id'].' '.$fila['nombre_estado'];
 	//print "</br>";
 	echo "<option value = '".$fila['id']."'>".$fila['nombre_estado']."</option>";
 }
 echo "</SELECT>";
-*/
+
 // Opcion C
 echo "<table>";
 while ($fila = mysqli_fetch_assoc($resultado)) {
